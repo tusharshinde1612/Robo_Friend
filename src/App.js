@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 // import Card from './Component/Card/card.js';
 import {Cardlist} from './Component/Card_list/card-list.js';
+import {Searchbox} from './Component/Searchbox/searchbox.js'
 
 
 class App extends React.Component{
@@ -26,13 +27,14 @@ render(){
      const {users,searchField} = this.state;
       
       const filterrobot=users.filter(searchField=>searchField.name.toLowerCase()
-        .includes(this.state.searchField.toLowerCase()))  
+        .includes(this.state.searchField.toLowerCase())) 
+
       
 
     return (
   <div className="App">
     <h1>Robofriend</h1>
-   <input type="text" onChange={this.filteredcard} placeholder="Search Robot"/>
+    <Searchbox filteredcard={this.filteredcard}/>
     <Cardlist users={filterrobot}/>
       </div>
   );
@@ -40,7 +42,7 @@ render(){
 
 export default App;
 
-//// const filteredString = users.filter(users =>
+//////////// const filteredString = users.filter(users =>
       //   users.name.toLowerCase().includes(searchField.toLowerCase()));
 
 
@@ -62,3 +64,5 @@ export default App;
 //         </a>
 //       </header>
 // // <Searchbox placeholder = 'search robot' filteredcard={this.filteredcard}/>
+/// //<input type="text" onChange={this.filteredcard} placeholder="Search Robot"/>
+// users.map(searchField=>console.log(users)) 

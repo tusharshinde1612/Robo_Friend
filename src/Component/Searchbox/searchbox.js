@@ -1,5 +1,7 @@
 import React from 'react';
-export const Searchbox =({filtercard})=>{
-	<input type="search"
-	onChange={filtercard}/>
-}
+export const Searchbox =({filteredcard})=>{
+	
+return(	
+<input type="search" placeholder="search Robot"
+	onChange={filteredcard}/>
+)}
